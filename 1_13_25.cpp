@@ -152,14 +152,14 @@ ostream& operator<<(ostream& out, const currency& x)
 {
 	long theAmount = x.amount;
 	if (theAmount < 0) {
-		cout << "-";
+		out << "-";
 		theAmount = -theAmount;
 	}
 	long dollars = theAmount / 100;
-	cout << '$' << dollars << '.';
+	out << '$' << dollars << '.';
 	int cents = theAmount - dollars * 100;
-	if (cents < 10)cout << '0';
-	cout << cents;
+	if (cents < 10)out << '0';
+	out << cents;
 	return out;
 }
 //currency currency::add(const currency& x)const
